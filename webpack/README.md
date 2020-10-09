@@ -207,6 +207,17 @@ scripts: {
 
 加载CSS文件，CSS文件有可能在node_moduels里面，比如bootstrap和antd
 
+```JavaScript
+module: {
+    rules: [
+        {
+            test: /\.css$/,
+            loader: ['style-loader', 'css-loader']
+        }
+    ]
+}
+```
+
 ###### 5.2.2 use
 
 ###### 5.2.3 use+loader
