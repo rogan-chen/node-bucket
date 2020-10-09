@@ -1,0 +1,1 @@
+console.log('打包多页应用，home页面');

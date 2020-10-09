@@ -1,0 +1,13 @@
+.image-3 {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 30px;
+    background: url(./resource/3.jpg);
+}
+
+img {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 30px;
+}

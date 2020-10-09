@@ -1,0 +1,1 @@
+console.log('打包多页应用，mine页面');
