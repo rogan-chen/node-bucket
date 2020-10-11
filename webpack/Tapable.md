@@ -30,7 +30,12 @@ cd 1.1-tapable-demo
 
 ## 前言
 
-webpack 本质上是一种**事件流机制**，它的工作流程就是将各个插件串联起来，而实现这一切的核心就是 `Tapable`。`Tapable` 的实现原理依赖于**发布订阅模式**。
+- webpack 本质上是一种**事件流机制**，它的工作流程就是将各个插件串联起来，而实现这一切的核心就是 `Tapable`。`Tapable` 的实现原理依赖于**发布订阅模式**。
+- 通过事件和注册和监听，触发webpack生命周期中的函数方法
+- 在具体介绍webpack内置插件与钩子可视化工具之前，我们先来了解一下webpack中的插件机制。webpack实现插件机制大体方式是：
+    - 创建：webpack在其内部对象上创建各种钩子
+    - 注册：插件将自己的方法注册到对应钩子上，交给webpack
+    - 调用：webpack编译过程中，会实时的触发响应钩子，因此也就触发了插件的方法
 
 ## Tapable Hooks 总览
 
@@ -59,6 +64,8 @@ const {
 | `AsyncSeriesHook` | 异步串行 | `tapAsync`、`tapPromise` | `callAsync`、`promise` |
 | `AsyncSeriesBailHook` | 异步串行 | `tapAsync`、`tapPromise` | `callAsync`、`promise` |
 | `AsyncSeriesWaterfallHook` | 异步串行 | `tapAsync`、`tapPromise` | `callAsync`、`promise` |
+
+> Hook类型可以分为`同步Sync`和`异步Async`，异步又分为`并行`和`串行`
 
 ## SyncHook
 
